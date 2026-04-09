@@ -63,4 +63,8 @@ colorfly-studio/
 
 ## Link GitHub Pages
 
+<<<<<<< HEAD
 https://phillipo0.github.io/ProyectoM1_CarlosRivera/
+=======
+https://phillipo0.github.io/ProyectoM1_CarlosRivera/
+>>>>>>> 4ea5126907b9d214a73dda15a8e055de4824f4a1
