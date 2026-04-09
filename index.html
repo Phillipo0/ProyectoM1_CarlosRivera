@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorfly Studio — Generador de Paletas</title>
+    <meta name="description" content="Genera paletas de colores aleatorias en segundos con Colorfly Studio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&family=DM+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Toast de notificación -->
+    <div id="toast" class="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#" class="logo" aria-label="Colorfly Studio - Inicio">
+          <span class="logo-mark" aria-hidden="true">✦</span>
+          <span class="logo-text">Colorfly Studio</span>
+        </a>
+        <p class="tagline">Genera paletas que inspiran</p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Controles -->
+      <section class="controls-section" aria-labelledby="controls-heading">
+        <h1 id="controls-heading" class="sr-only">Generador de paletas de colores</h1>
+
+        <div class="controls-bar">
+          <div class="control-group">
+            <label class="control-label" for="palette-size">Tamaño de paleta</label>
+            <div class="select-wrapper">
+              <select id="palette-size" name="palette-size" aria-describedby="size-hint">
+                <option value="6">6 colores</option>
+                <option value="8" selected>8 colores</option>
+                <option value="9">9 colores</option>
+              </select>
+            </div>
+            <span id="size-hint" class="hint-text">Elige cuántos colores generar</span>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="color-format">Formato de color</label>
+            <div class="select-wrapper">
+              <select id="color-format" name="color-format">
+                <option value="hex" selected>HEX</option>
+                <option value="hsl">HSL</option>
+              </select>
+            </div>
+          </div>
+
+          <button
+            id="generate-btn"
+            class="generate-btn"
+            type="button"
+            aria-label="Generar nueva paleta de colores"
+          >
+            <span class="btn-icon" aria-hidden="true">◎</span>
+            <span class="btn-text">Generar paleta</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Paleta + descripción -->
+      <section class="palette-section" aria-labelledby="palette-heading">
+        <h2 id="palette-heading" class="sr-only">Paleta generada</h2>
+
+        <div class="palette-layout">
+          <!-- Swatches -->
+          <div
+            id="palette-container"
+            class="palette-container"
+            role="list"
+            aria-label="Colores de la paleta generada"
+          >
+            <!-- Generado por JavaScript -->
+            <div class="palette-placeholder" aria-hidden="true">
+              <span class="placeholder-icon">✦</span>
+              <p>Presiona "Generar paleta" para comenzar</p>
+            </div>
+          </div>
+
+          <!-- Descripción generada por IA -->
+          <aside
+            id="palette-description-panel"
+            class="description-panel"
+            aria-live="polite"
+            aria-label="Descripción de la paleta"
+          >
+            <div class="description-inner">
+              <p class="description-label">Descripción de paleta</p>
+              <div id="palette-description" class="description-text">
+                <p class="description-placeholder">
+                  La descripción de tu paleta aparecerá aquí después de generar los colores.
+                </p>
+              </div>
+              <div id="palette-mood" class="mood-tags" aria-label="Estados de ánimo de la paleta"></div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Historial -->
+      <section class="history-section" aria-labelledby="history-heading">
+        <h2 id="history-heading" class="history-title">Historial reciente</h2>
+        <div id="history-container" class="history-container" aria-label="Paletas generadas anteriormente">
+          <p class="history-empty">Aún no has generado paletas.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Hecho con <span aria-label="amor">♥</span> por
+        <strong>Colorfly Studio</strong> &mdash; Todos los colores son aleatorios
+      </p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
